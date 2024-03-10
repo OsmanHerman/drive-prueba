@@ -1,0 +1,261 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(./assets/Roboto-Regular.ttf);
+}
+:root {
+  --color-1: #FFF;
+  --color-2: #222;
+  --color-3: rgba(34, 34, 34, 0.60);
+  --color-4: #FFD892;
+  --color-bg-gallery-text: linear-gradient(180deg, #FFD892 0%, #E5B865 100%);
+  --color-bg-mask: rgba(17, 17, 17, 0.35);
+  --radius-1: 30px;
+  --font-text: "Roboto";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+}
+
+#gallery {
+  width: 100%;
+  padding: 125px 18%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+#gallery .gallery-images {
+  width: 100%;
+  display: grid;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  grid-template-areas: "img-1 img-1 img-1 img-1 img-1 img-2 img-2 img-2" "img-3 img-3 img-3 img-4 img-4 img-4 img-5 img-5";
+  gap: 10px;
+}
+#gallery .gallery-images .gallery-img {
+  border-radius: var(--radius-1);
+  display: flex;
+  align-items: end;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s linear;
+}
+#gallery .gallery-images .gallery-img .mask {
+  position: absolute;
+  background: var(--color-bg-mask);
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-1);
+  inset: 0;
+  transition: all 0.2s linear;
+}
+#gallery .gallery-images .gallery-img h2 {
+  color: var(--color-4);
+  font-family: var(--font-text);
+  font-size: 3rem;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.2s linear;
+}
+#gallery .gallery-images .gallery-img:hover .mask {
+  opacity: 0;
+}
+#gallery .gallery-images .gallery-img:hover h2 {
+  text-shadow: 1px 1px 5px #222;
+}
+#gallery .gallery-images .gallery-img-1 {
+  grid-area: img-1;
+  height: 420px;
+  background: url(./assets/gallery-img1.jpg);
+  padding: 0 0 33px 34px;
+}
+#gallery .gallery-images .gallery-img-1 .mask {
+  background: transparent;
+}
+#gallery .gallery-images .gallery-img-1 h2 {
+  opacity: 0;
+}
+#gallery .gallery-images .gallery-img-2 {
+  grid-area: img-2;
+  height: 420px;
+  background: url(./assets/gallery-img2.jpg);
+  padding: 0 0 33px 34px;
+}
+#gallery .gallery-images .gallery-img-3 {
+  grid-area: img-3;
+  height: 350px;
+  background: url(./assets/gallery-img3.jpg);
+  padding: 0 0 28px 32px;
+}
+#gallery .gallery-images .gallery-img-3 h2 {
+  font-size: 2rem;
+}
+#gallery .gallery-images .gallery-img-4 {
+  grid-area: img-4;
+  height: 350px;
+  background: url(./assets/gallery-img4.jpg);
+  padding: 0 0 28px 32px;
+}
+#gallery .gallery-images .gallery-img-4 h2 {
+  font-size: 2rem;
+}
+#gallery .gallery-images .gallery-img-5 {
+  grid-area: img-5;
+  height: 350px;
+  background: url(./assets/gallery-img5.jpg);
+  padding: 0 0 28px 32px;
+}
+#gallery .gallery-images .gallery-img-5 h2 {
+  font-size: 2rem;
+}
+#gallery .gallery-images .gallery-img {
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#gallery .gallery-text {
+  width: 100%;
+  border-radius: var(--radius-1);
+  background: var(--color-bg-gallery-text);
+  display: flex;
+  flex-direction: column;
+  row-gap: 21px;
+  padding: 22px 53px 22px 33px;
+  font-family: var(--font-text);
+}
+#gallery .gallery-text h2 {
+  color: var(--color-2);
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+#gallery .gallery-text p {
+  color: var(--color-3);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+}
+@media screen and (max-width: 1700px) {
+  #gallery {
+    padding: 80px 13%;
+  }
+}
+@media screen and (max-width: 1500px) {
+  #gallery {
+    padding: 80px 9%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  #gallery .gallery-images .gallery-img-1 {
+    padding: 0 0 33px 20px;
+  }
+  #gallery .gallery-images .gallery-img-1 h2 {
+    font-size: 2.5rem;
+  }
+  #gallery .gallery-images .gallery-img-2 {
+    padding: 0 0 33px 20px;
+  }
+  #gallery .gallery-images .gallery-img-2 h2 {
+    font-size: 2.5rem;
+  }
+  #gallery .gallery-images .gallery-img-3 {
+    padding: 0 0 28px 15px;
+  }
+  #gallery .gallery-images .gallery-img-3 h2 {
+    font-size: 1.8rem;
+  }
+  #gallery .gallery-images .gallery-img-4 {
+    padding: 0 0 28px 15px;
+  }
+  #gallery .gallery-images .gallery-img-4 h2 {
+    font-size: 1.8rem;
+  }
+  #gallery .gallery-images .gallery-img-5 {
+    padding: 0 0 28px 15px;
+  }
+  #gallery .gallery-images .gallery-img-5 h2 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  #gallery {
+    padding: 60px 9%;
+  }
+  #gallery .gallery-images {
+    grid-template-areas: "img-1 img-1" "img-2 img-2" "img-3 img-4" "img-5 img-5";
+  }
+  #gallery .gallery-images .gallery-img-1 {
+    height: 310px;
+  }
+  #gallery .gallery-images .gallery-img-1 h2 {
+    font-size: 2.5rem;
+  }
+  #gallery .gallery-images .gallery-img-2 {
+    height: 180px;
+  }
+  #gallery .gallery-images .gallery-img-2 h2 {
+    font-size: 2.5rem;
+  }
+  #gallery .gallery-images .gallery-img-3 {
+    height: 240px;
+  }
+  #gallery .gallery-images .gallery-img-3 h2 {
+    font-size: 1.8rem;
+  }
+  #gallery .gallery-images .gallery-img-4 {
+    height: 240px;
+  }
+  #gallery .gallery-images .gallery-img-4 h2 {
+    font-size: 1.8rem;
+  }
+  #gallery .gallery-images .gallery-img-5 {
+    height: 200px;
+  }
+  #gallery .gallery-images .gallery-img-5 h2 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  #gallery {
+    padding: 60px 30px;
+  }
+  #gallery .gallery-images .gallery-img-1 {
+    padding: 0 20px 20px 20px;
+  }
+  #gallery .gallery-images .gallery-img-1 h2 {
+    font-size: 2rem;
+  }
+  #gallery .gallery-images .gallery-img-2 {
+    padding: 0 20px 20px 20px;
+  }
+  #gallery .gallery-images .gallery-img-2 h2 {
+    font-size: 2rem;
+  }
+  #gallery .gallery-images .gallery-img-3 {
+    padding: 0 15px 20px 15px;
+  }
+  #gallery .gallery-images .gallery-img-3 h2 {
+    font-size: 1.5rem;
+  }
+  #gallery .gallery-images .gallery-img-4 {
+    padding: 0 15px 20px 15px;
+  }
+  #gallery .gallery-images .gallery-img-4 h2 {
+    font-size: 1.5rem;
+  }
+  #gallery .gallery-images .gallery-img-5 {
+    padding: 0 15px 20px 15px;
+  }
+  #gallery .gallery-images .gallery-img-5 h2 {
+    font-size: 2rem;
+  }
+  #gallery .gallery-text h2 {
+    font-size: 2rem;
+  }
+}
