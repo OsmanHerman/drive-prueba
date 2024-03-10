@@ -1,0 +1,169 @@
+:root {
+  --color-1: #fff;
+  --color-2: #323232;
+  --radius-1: 10px;
+  --box-shadow-img: 2px 2px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+}
+
+#gallery {
+  width: 100%;
+  padding: 80px 18%;
+  display: grid;
+  grid-template-areas: "img-1 img-1 img-2 img-3" "img-1 img-1 img-4 img-5" "img-6 img-7 img-10 img-10" "img-8 img-9 img-10 img-10";
+  gap: 15px;
+}
+#gallery .gallery-img {
+  border-radius: var(--radius-1);
+  box-shadow: var(--box-shadow-img);
+  cursor: pointer;
+}
+#gallery .img-1 {
+  grid-area: img-1;
+  height: 390px;
+  background: url("./assets/gallery-img-1.jpg");
+}
+#gallery .img-2 {
+  grid-area: img-2;
+  background: url("./assets/gallery-img-2.jpg");
+}
+#gallery .img-3 {
+  grid-area: img-3;
+  background: url("./assets/gallery-img-3.jpg");
+}
+#gallery .img-4 {
+  grid-area: img-4;
+  background: url("./assets/gallery-img-4.jpg");
+}
+#gallery .img-5 {
+  grid-area: img-5;
+  background: url("./assets/gallery-img-5.jpg");
+}
+#gallery .img-6 {
+  grid-area: img-6;
+  background: url("./assets/gallery-img-6.jpg");
+}
+#gallery .img-7 {
+  grid-area: img-7;
+  background: url("./assets/gallery-img-7.jpg");
+}
+#gallery .img-8 {
+  grid-area: img-8;
+  background: url("./assets/gallery-img-8.jpg");
+}
+#gallery .img-9 {
+  grid-area: img-9;
+  background: url("./assets/gallery-img-9.jpg");
+}
+#gallery .img-10 {
+  grid-area: img-10;
+  height: 390px;
+  background: url("./assets/gallery-img-10.jpg");
+}
+#gallery .gallery-img {
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#gallery .gallery-img-mobile {
+  display: none;
+}
+@media screen and (max-width: 1700px) {
+  #gallery {
+    padding: 80px 13%;
+  }
+}
+@media screen and (max-width: 1500px) {
+  #gallery {
+    padding: 80px 9%;
+  }
+}
+@media screen and (max-width: 900px) {
+  #gallery {
+    padding: 80px 30px;
+    display: flex;
+  }
+  #gallery .gallery-img {
+    display: none;
+  }
+  #gallery .gallery-img-mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  #gallery .gallery-img-mobile .mobile-img-1, #gallery .gallery-img-mobile .mobile-img-6, #gallery .gallery-img-mobile .images-1, #gallery .gallery-img-mobile .images-2 {
+    height: 400px;
+  }
+  #gallery .gallery-img-mobile .images-1, #gallery .gallery-img-mobile .images-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    position: relative;
+  }
+  #gallery .gallery-img-mobile .images-1 div, #gallery .gallery-img-mobile .images-2 div {
+    padding: 13px 13px 0 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    transition: all 2s linear;
+  }
+  #gallery .gallery-img-mobile .images-1 div .btn-back-1, #gallery .gallery-img-mobile .images-1 div .btn-back-2, #gallery .gallery-img-mobile .images-2 div .btn-back-1, #gallery .gallery-img-mobile .images-2 div .btn-back-2 {
+    opacity: 0;
+    width: 41px;
+  }
+  #gallery .gallery-img-mobile .images-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 2s linear;
+  }
+  #gallery .gallery-img-mobile .mobile-img-1 {
+    background: url(./assets/gallery-img-1.jpg);
+  }
+  #gallery .gallery-img-mobile .mobile-img-2 {
+    background: url(./assets/gallery-img-2.jpg);
+  }
+  #gallery .gallery-img-mobile .mobile-img-3 {
+    background: url(./assets/gallery-img-3.jpg);
+  }
+  #gallery .gallery-img-mobile .mobile-img-4 {
+    background: url(./assets/gallery-img-4.jpg);
+  }
+  #gallery .gallery-img-mobile .mobile-img-5 {
+    background: url(./assets/gallery-img-5.jpg);
+  }
+  #gallery .gallery-img-mobile .mobile-img-6 {
+    background: url(./assets/gallery-img-10.jpg);
+  }
+  #gallery .gallery-img-mobile .mobile-img-7 {
+    background: url(./assets/gallery-img-6.jpg);
+  }
+  #gallery .gallery-img-mobile .mobile-img-8 {
+    background: url(./assets/gallery-img-7.jpg);
+  }
+  #gallery .gallery-img-mobile .mobile-img-9 {
+    background: url(./assets/gallery-img-8.jpg);
+  }
+  #gallery .gallery-img-mobile .mobile-img-10 {
+    background: url(./assets/gallery-img-9.jpg);
+  }
+  #gallery .gallery-img-mobile .mobile-bg-img {
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: var(--radius-1);
+    box-shadow: var(--box-shadow-img);
+  }
+}
